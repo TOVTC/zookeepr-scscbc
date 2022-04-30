@@ -22,11 +22,11 @@ const printResults = resultArr => {
 };
 
 const getZookeepers = (formData = {}) => {
-  let queryUrl = "api/zookeepers?";
+  let queryUrl = "/api/zookeepers?";
   Object.entries(formData).forEach(([key, value]) => {
     queryUrl += `${key}=${value}&`;
   });
-  fetch('/api/zookeepers')
+  fetch(queryUrl)
     .then(response => {
       if (!response.ok) {
         return alert('Error: ' + response.statusText);
